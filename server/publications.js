@@ -6,3 +6,12 @@ Meteor.publish('allClientCollectionName', function() {
 		}
 	});
 });
+
+Meteor.publish('clientDetails', function(opts) {
+	if (global[opts.collectionName]) {
+		return global[opts.collectionName].find();
+	}
+
+	return this.ready();
+});
+
