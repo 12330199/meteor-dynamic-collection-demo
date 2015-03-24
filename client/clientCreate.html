@@ -1,0 +1,21 @@
+<template name="clientCreate">
+	<h2>Create Client</h2>
+	<form id="frm-client">
+		<input id="txt-client-name" placeholder="Client Name" />
+
+		<input type="submit" value="Create Client" />
+	</form>
+
+
+	<h2>Client Listing</h2>
+	<ul class="lst-client">
+		{{#each clientList}}
+			<li data-collection="{{collectionName}}">{{name}}</li>
+		{{else}}
+			No record.
+		{{/each}}
+	</ul>
+
+
+	<h2>Client Details: {{currentClient}}</h2>
+</template>
