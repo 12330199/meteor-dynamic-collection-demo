@@ -30,5 +30,16 @@ Template.clientCreate.events({
 		var collectionName = $(e.target).data('collection');
 
 		Session.set('currentClient', collectionName);
+	},
+
+	'submit #frm-client-details': function(e) {
+		e.preventDefault();
+
+		var clientProps = {
+			collectionName: $(e.target).find('#txt-client').val(),
+			email: $(e.target).find('#txt-client-email').val()
+		};
+
+		Meteor.call('addClientEmail', clientProps);
 	}
 });

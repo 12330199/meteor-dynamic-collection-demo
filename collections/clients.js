@@ -9,7 +9,15 @@ Meteor.methods({
 			name: clientProps.name
 		});
 
+		global.initDB();
+
 		return clientId;
+	},
+
+	'addClientEmail': function(clientProps) {
+		return global[clientProps.collectionName].insert({
+			email: clientProps.email
+		});
 	}
 });
 

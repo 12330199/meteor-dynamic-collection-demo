@@ -6,7 +6,6 @@
 		<input type="submit" value="Create Client" />
 	</form>
 
-
 	<h2>Client Listing</h2>
 	<ul class="lst-client">
 		{{#each clientList}}
@@ -16,6 +15,13 @@
 		{{/each}}
 	</ul>
 
-
 	<h2>Client Details: {{currentClient}}</h2>
+	{{#if currentClient}}
+		<form id="frm-client-details">
+			<input type="hidden" id="txt-client" value="{{currentClient}}" />
+			<input id="txt-client-email" placeholder="Client Email" />
+
+			<input type="submit" value="Add" />
+		</form>
+	{{/if}}
 </template>
